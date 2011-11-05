@@ -1,9 +1,0 @@
----
-title: 'Mon deuxième poste révolutionnaire !'
-layout: post
-categories: ['en']
----
-
- Bonjour bonjour chère citoyens Geeks !
- 
- Voici mon poste révolutionnaire !!!
