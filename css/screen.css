@@ -22,7 +22,11 @@ body {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
+  font-size: 110%;
+}
+
+h3, h4, h5, h6 {
   font-size: 100%;
 }
 
@@ -123,7 +127,7 @@ ul.posts {
     overflow: hidden;
   }
 
-    .site .footer .contact {
+    .site .footer .contact, .site .footer .rss {
       float: left;
       margin-right: 3em;
     }
@@ -132,14 +136,11 @@ ul.posts {
         color: #8085C1;
       }
 
-    .site .footer .rss {
-      margin-top: 1.1em;
-      margin-right: -.2em;
-      float: right;
-    }
-
-      .site .footer .rss img {
-        border: 0;
+      .site .footer .rss a {
+        color: #8085C1;
+        padding: 5px 0px 5px 22px;
+        line-height: 16px;
+        background: url(/images/rss.png) left center no-repeat;
       }
 
 /*****************************************************************************/
@@ -149,7 +150,7 @@ ul.posts {
 /*****************************************************************************/
 
 #post {
-
+  margin-bottom: 40px;
 }
 
   /* standard */
@@ -162,12 +163,10 @@ ul.posts {
 
   #post ul,
   #post ol {
-    margin-left: 1.35em;
+    margin-left: 1.25em;
   }
 
   #post code {
-    border: 1px solid #ddd;
-    background-color: #eef;
     font-size: 85%;
     padding: 0 .2em;
   }
@@ -195,3 +194,24 @@ ul.posts {
   #related h2 {
     margin-bottom: 1em;
   }
+
+blockquote {
+  padding-left: 20px !important;
+  font-style: italic;
+}
+
+.deprecated {
+  background-color: #FDD;
+  border: 1px solid #FBB;
+  padding: 10px;
+}
+
+#post > .title {
+  color: black;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+
+#home > h1 > a {
+  color: #A00;
+}
