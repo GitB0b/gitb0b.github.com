@@ -1,4 +1,4 @@
-markdown: rdiscount
+auto : true
+url: "http://gitb0b.github.com/"
+markdown : rdiscount
 pygments: true
-permalink: "/:year/:month/:day/:title"
-lsi: false

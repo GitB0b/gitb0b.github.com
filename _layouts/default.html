@@ -1,1 +1,162 @@
-  <!DOCTYPE html>    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">    <head>        <meta http-equiv="content-type" content="text/html; charset=utf-8" />        <title>{{ page.title }}</title>        <meta name="author" content="bob" />        <!-- syntax highlighting CSS -->        <link rel="stylesheet" href="/css/syntax.css" type="text/css" />        <!-- Homepage CSS -->        <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />    </head>    <body>        <div class="site">            <div class="title">                <a href="/">Bob Kroonen</a> - <a href="http://www.twitter.com/Bob_Cisco">@Bob_Cisco</a>            </div>            {{ content }}            <div class="footer">                <div class="contact">                    <p>                        <a href="http://github.com/gitb0b/">GitB0b</a><br/>                    </p>                </div>            </div>        </div>    </body>    </html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{{ page.title }}</title>
+    <meta name="author" content="k33g" />
+
+    <!-- Homepage CSS -->
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
+    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+    <script type="text/javascript" src="/js/twitter.js"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+</head>
+
+<body >
+
+<div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><a href="/">K33G_ORG's Blog</a></h3>
+          <ul class="nav">
+            <!--<li class="active"><a href="#masthead">Overview</a></li>
+            <li><a href="#about">About</a></li>-->
+            <li><a href="http://twitter.com/k33g_org/">@k33g_org</a></li>
+            <li><a href="http://feeds.feedburner.com/K33g_orgsBlog">RSS</a></li>
+            <li><a href="http://github.com/k33g/">github.com/k33g</a></li>
+            <li><a href="https://github.com/k33g/CV/blob/master/CV-2011.md">geek cv</a></li>
+            <li><a href="https://github.com/k33g/k33g.github.com">Fork Me! (on GitHub)</a></li>
+            <li><a href="http://k33g.github.com/all.html">... all posts &raquo;</a></li>
+            <li><a href="/">A venir : version mobile ...</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<div class="container-fluid">
+
+    <div class="sidebar" style="padding-top: 60px;">
+        <div>
+            <img src="/images/k33g.png">
+        </div>
+        <div>
+            <h3>Last Tweets</h3>
+            <ul class="posts" id="from_k33g_org"></ul>
+        </div>
+        <hr>
+        <script>
+            tw.search('from:k33g_org',function(data){
+                for(var i = 0; i <3; i+=1){
+                    var p = document.createElement('li');
+                    p.innerHTML = '<span> (' + data[i].user + ')</span> &raquo; ' + data[i].msg ;
+                    document.querySelector('#from_k33g_org').appendChild(p);
+                }
+            });
+        </script>
+
+        <div id="last5">
+            <h3>Blog Posts (last 5)</h3>
+            <ul class="posts">
+                {% for post in site.posts limit:5 %}
+                  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <b><a href="http://k33g.github.com/all.html">... all posts &raquo;</a></b>
+        </div>
+        <hr>
+        <div>
+            <h3>Articles, books, ...</h3>
+            <ul class="posts">
+                <li><a href="https://github.com/3monkeys/play.rules">Play.Rules</a>&nbsp;&raquo;&nbsp;Un e-book sur Play!Framework / an e-book about Play!Framework, by <a href="http://twitter.com/k33g_org/">@k33g_org</a>, <a href="http://twitter.com/loic_d/">@loic_d</a> and <a href="http://twitter.com/mklabs/">@mklabs</a> </li>
+                <li><a href="https://github.com/k33g/articles">Mes articles</a>&nbsp;&raquo;&nbsp;Un repo github avec mes articles (vous pouvez faire des <b>pullrequests</b> pour commenter, améliorer, ...)</li>
+                <li><a href="https://github.com/k33g/couchapp-book">CouchApp-Book</a>&nbsp;&raquo;&nbsp;Un début de livre sur le framework CouchApp pour faire des applications dans CouchDb ... très en retard dans la rédaction</li>
+                <li><a href="https://github.com/k33g/groovy-book">Groovy-Book</a>&nbsp;&raquo;&nbsp;Un mini e-book sur l'utilisation de Groovy sans prise de tête ... très très en retard dans la rédaction</li>
+                <li><a href="https://github.com/k33g/news-letter">"News-Letter"</a>&nbsp;&raquo;&nbsp;De temps en temps : agrégation de news trouvées ici et là</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h3><3 www</h3>
+            <ul class="posts">
+                <li><a href="http://coffeebean.loicdescotte.com/">CoffeeBean</a>&nbsp;&raquo;&nbsp;Blog Java, Play!, Scala ... de Loïc</li>
+                <li><a href="http://blog.mklog.fr/">MkLog</a>&nbsp;&raquo;&nbsp;Blog JS, Node, Git, Play! ... de Mickaël</li>
+                <li><a href="http://lyonjs.github.com/">LyonJS</a></li>
+                <li><a href="http://www.cast-it.fr/">Cast-IT</a>&nbsp;&raquo;&nbsp;Le podcast Lyonnais sur l'écosystème Java</li>
+                <li><a href="http://www.touilleur-express.fr/">Le Touilleur Express</a>&nbsp;&raquo;&nbsp;Blog de notre évangéliste français Play!</li>
+                <li><a href="http://blog.androgames.net/">Androgames</a>&nbsp;&raquo;&nbsp;Blog d'Antoine : Android Development & Game</li>
+                <li><a href="http://christophehamerling.com/">C.Hamerling</a>&nbsp;&raquo;&nbsp;Blog de Christophe : Play!, JUG Montpellier, ...</li>
+                <li><a href="http://hypedrivendev.wordpress.com/">Hype Driven Development</a>&nbsp;&raquo;&nbsp;1 Java man ... en train de passer à Node ?</li>
+                <li><a href="http://naholyr.fr/">Naholyr</a>&nbsp;&raquo;&nbsp;Node.js, Express, ...</li>
+                <li><a href="http://www.atinux.fr/">Atinux</a>&nbsp;&raquo;&nbsp;Fan de JS & de Node</li>
+
+
+                <li><a href="http://lescastcodeurs.com/">Les Cast Codeurs</a>&nbsp;&raquo;&nbsp;Le podcast Java en Français</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <br>
+            <h3>Little projects</h3>
+            <ul class="posts">
+                <li><a href="https://github.com/k33g/species">Species</a>&nbsp;&raquo;&nbsp;JS Class structure, Java style OOP, with AOP plugin (only for webkit, a little for FF)</li>
+                <li><a href="https://github.com/k33g/artemia">Artemia --=>>>|:<</a>&nbsp;&raquo;&nbsp;Artemia is a clientside JSON document store like Lawnchair (in the way of CouchDb). It's very very (and very) inspired by Lawnchair (it copies many aspects, normal, i love Lawnchair) but has some specific features.</li>
+                <li><a href="https://github.com/k33g/r2">R2</a>&nbsp;&raquo;&nbsp;R2 is a small (4.62 kb minified) Android webapp framework and soon iOS5 (i plan to do something with WebOS)</li>
+            </ul>
+        </div>
+        <hr>
+    </div>
+
+    <div class="content">
+      	<div class="hero-unit" style="padding-top:15px; padding-bottom:15px; ">
+                <h3><strong style="font-size: 140%;">✪</strong> A voir : Les tutos BackBone</h3>
+                <ul>
+                    <li><a href="https://github.com/k33g/articles/blob/master/2011-08-08-BB-MODELS-COLLECTIONS.md">Backbone : "Dans l'ordre" - Part I : "Modèles & Collections"</a></li>
+                    <li><a href="https://github.com/k33g/articles/blob/master/2011-08-10-BB-SYNC.md">Backbone : "Dans l'ordre" - Part II : "Modèles & Collections + Backbone.sync"</a></li>
+                    <li><a href="https://github.com/k33g/articles/blob/master/2011-08-14-BB-VIEWS.md">Backbone : "Dans l'ordre" - Part III : "Les Vues ... (Contrôleurs ?)"</a></li>
+                    <li><a href="https://github.com/k33g/articles/blob/master/2011-08-18-BB-ROUTER.md">Backbone : "Dans l'ordre" - Part IV : "Le Routeur / Router"</a></li>
+                </ul>
+		<!--<p>by <a>@loic_d</a> & <a>@k33g_org</a></p>-->
+	    </div>
+      {{ content }}
+    </div>
+
+</div>
+
+
+    <!--
+    <div class="footer">
+        <p>
+            <a href="http://lescastcodeurs.com"><img border="0" alt="J'ecoute les Cast Codeurs" src="http://lescastcodeurs.com/img/jecoute_les_castcodeurs_200px.png" /></a>
+        </p>
+        <p>
+            <a href="http://www.viadeo.com/fr/profile/philippe.charriere1"><img src="http://static0.viadeo-static.com/v_img14/profile/promotion/black/button_profile_fr.png" border="0" /></a>
+        </p>
+    </div>
+    -->
+
+
+<!--<a href="https://github.com/k33g/k33g.github.com"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>-->
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11383603-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
