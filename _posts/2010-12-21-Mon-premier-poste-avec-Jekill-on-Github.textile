@@ -1,7 +1,7 @@
 ---
 title: 'Mon premier poste avec Jekill on Github'
 layout: post
-categories: ['fr']
+categories: ['en']
 ---
 
  ** Bonjour les Geeks ! Voici mon tous premier poste avec Jekill ! :D
